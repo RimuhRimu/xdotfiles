@@ -1,0 +1,44 @@
+#!/bin/sh
+
+workspaces() {
+	# Get list of workspaces
+	desktops=$(wmctrl -d | awk '{print $1}')
+
+	BOX="(box :class \"works\" :orientation \"v\" :space-evenly true :halign \"start\" :spacing 10"
+	# Loop over each workspace
+	for desktop in $desktops; do
+		workspace_name=$(wmctrl -d | grep "^$desktop" | awk '{print $NF}')
+		# check if workspace is occupied
+		if wmctrl -l | grep "^.*  $desktop $workspace_name$" >/dev/null; then
+			occupied="occupied"
+		else
+			occupied="unoccupied"
+		fi
+		# check if workspace is focused
+		if wmctrl -d | grep "^$desktop" | awk '{print $2}' | grep "^*" >/dev/null; then
+			focused="focused"
+		else
+			focused=""
+		fi
+		# Output the workspace button
+		BOX="${BOX}(button :onclick \"wmctrl -s $desktop\" :class \"workspace-button $workspace_name $occupied $focused\" \"$workspace_name\")"
+	done
+	BOX="${BOX})"
+	echo $BOX
+}
+
+# Output the workspace buttons on script start
+workspaces
+
+tracking() {
+	# Use xprop to monitor _NET_CURRENT_DESKTOP property changes
+	xprop -spy -root _NET_CURRENT_DESKTOP | while read LINE; do
+		# When workspace changes, run workspaces function
+		if echo $LINE | grep -q "_NET_CURRENT_DESKTOP(CARDINAL)"; then
+			workspaces
+		fi
+	done
+}
+
+# Call the tracking function when script starts
+tracking

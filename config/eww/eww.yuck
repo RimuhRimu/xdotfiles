@@ -1,0 +1,14 @@
+(defpoll time :interval "5s"
+  :initial `date +'{"hour":"%H","min":"%M"}'`
+  `date +'{"hour":"%H","min":"%M"}'`)
+
+(defwindow powermenu
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry
+              :width "20%"
+              :height "20%")
+  (box
+    (label :text "hello there")
+
