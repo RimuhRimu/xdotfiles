@@ -1,16 +1,16 @@
 /* colors */
 
 * {
-  background-alt: #1a1b26;
-  background:     #1a1b26;
-  selected:       #ffd5cdff;
-  foreground:     #eeeeeeff;
+  background-alt: #24283b;
+  background:     #24283b;
+  selected:       #f7768eff;
+  foreground:     #f7768eff;
   ac:             #ea907aff;
   red:            #D35D6Eff;
   green:          #90c861ff;
-  yellow:         #FDD835ff;
-  blue:           #2ac3de;
-  purple:         #c47eb7ff;
-  cyan:           #4DD0E1ff;
-  border:         #1a1b26;
+  yellow:         #000000ff;
+  blue:           #7aa2f7;
+  purple:         #bb9af7ff;
+  cyan:           #bb9af7ff;
+  border:         #24283b;
 }
