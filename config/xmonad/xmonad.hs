@@ -117,8 +117,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       ((modm .|. shiftMask, xK_c), kill),
       -- GAPS!!!
       ((modm .|. controlMask, xK_g), sendMessage ToggleGaps), -- toggle all gaps
-      ((modm .|. shiftMask, xK_g), sendMessage $ setGaps [(L, 60), (R, 5), (U, 5), (D, 5)]), -- reset the GapSpec
-      ((modm .|. controlMask, xK_t), sendMessage $ IncGap 10 L), -- increment the left-hand gap
+      ((modm .|. shiftMask, xK_g), sendMessage $ setGaps [(L, 65), (R, 5), (U, 5), (D, 5)]), -- reset the GapSpec ((modm .|. controlMask, xK_t), sendMessage $ IncGap 10 L), -- increment the left-hand gap
       ((modm .|. shiftMask, xK_t), sendMessage $ DecGap 10 L), -- decrement the left-hand gap
       ((modm .|. controlMask, xK_y), sendMessage $ IncGap 10 U), -- increment the top gap
       ((modm .|. shiftMask, xK_y), sendMessage $ DecGap 10 U), -- decrement the top gap
@@ -275,10 +274,11 @@ myStartupHook = do
   spawn "exec ~/bin/lock.sh"
   spawnOnce "picom"
   spawnOnce "deadd-notification-center"
+  spawnOnce "flameshot"
   spawnOnce "systemctl --user enable --now ulauncher"
-  spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &"
   spawn "sleep 15 && trayer --edge left --align center --SetDockType true --SetPartialStrut true --expand true --width 10 --height 18 --iconspacing 5 --distancefrom left --distance 25 --transparent false"
   spawnOnce "copyq"
+  spawn "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 main = xmonad $ fullscreenSupport $ ewmh defaults
 
