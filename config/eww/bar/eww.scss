@@ -32,7 +32,7 @@ $white: $foreground;
 .launcher_icon{
     color: $cyan;
     font-family: "Font Awesome 6 Pro";
-    font-size: 1.7em;
+    font-size: 3em;
     padding: 1rem 0 1rem 0;
 }
 
@@ -43,6 +43,10 @@ $white: $foreground;
   font-size: 1.4em;
   background-color: $black;
   border-radius: 5px;
+}
+
+.netUsage {
+  background-color: $black;
 }
 
 /* Unoccupied */

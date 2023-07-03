@@ -53,7 +53,8 @@ get_bat(){
 
 ## Get Current Brightness
 get_bright(){
-	brightnessctl -m -d acpi_video0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'
+  # check your device, it may be different
+	brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'
 }
 
 ## Get Current Volume

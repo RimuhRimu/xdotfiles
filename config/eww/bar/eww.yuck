@@ -3,7 +3,7 @@
 ;; Maintaned by https://github.com/rxyhn
 
 ;; put path to aesthetic bar config files here ;;
-(defvar eww "$HOME/.local/bin/eww -c $HOME/.config/eww/bar")
+(defvar eww "eww -c $HOME/.config/eww/bar")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Widget Section's							 ;;	
@@ -14,7 +14,11 @@
 		 :space-evenly "false" 
 		 :spacing -15
   	(button :class "launcher_icon" 
-		   	:onclick "~/bin/bartoggle"  " ")))
+		   	:onclick "~/bin/bartoggle"  "󰯉")))
+
+;; Network usage ;;
+
+;;(defpoll netusage :interval "1s" "scripts/netusage");;
 
 ;; Workspaces Widgets ;;
 (defwidget workspaces []
@@ -61,7 +65,7 @@
 				   :min 0))
   			(label :class "brightness-icon" 
 			  	   :text ""))))
-(defpoll current-brightness :interval "1s" "brightnessctl -m -d amdgpu_bl0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defpoll current-brightness :interval "1s" "brightnessctl -m -d intel_backlight | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 (defvar bright false)
 
 ;; Volume Widgets ;;
@@ -155,7 +159,8 @@
 			:space-evenly "false" 
 			:valign "start" 
 (launcher)
-(workspaces)))
+(workspaces)
+))
 
 ;; Bottom Widgets ;;
 (defwidget bottom []

@@ -156,9 +156,9 @@
 		 	:space-evenly "false"
 			:halign "center"
 			:spacing 35
-			(button :class "btn_prev" :onclick "~/.config/eww/dashboard/scripts/music previous" "ﭣ")
+			(button :class "btn_prev" :onclick "~/.config/eww/dashboard/scripts/music previous" "󰒮")
 			(button :class "btn_play" :onclick "~/.config/eww/dashboard/scripts/music toggle" playpause)
-			(button :class "btn_next" :onclick "~/.config/eww/dashboard/scripts/music next" "ﭡ"))
+			(button :class "btn_next" :onclick "~/.config/eww/dashboard/scripts/music next" "󰒭"))
 	(box    :orientation "h"
 			:class "metric-player"
 			:space-evenly "false"
@@ -207,15 +207,17 @@
 	(button :class "app-reddit" 
 			:onclick "~/.config/eww/dashboard/scripts/open_apps --reddit" "")
 	(button :class "app-telegram" 
-			:onclick "~/.config/eww/dashboard/scripts/open_apps --telegram" "")
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --whatsapp" "")
 	(button :class "app-code" 
-			:onclick "~/.config/eww/dashboard/scripts/open_apps --code" "﬏")
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --youtube" "")
 	(button :class "app-discord" 
 			:onclick "~/.config/eww/dashboard/scripts/open_apps --discord" "")
 	(button :class "app-github"
-			:onclick "~/.config/eww/dashboard/scripts/open_apps --github" "")
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --github" "")
 	(button :class "app-spotify" 
 			:onclick "~/.config/eww/dashboard/scripts/open_apps --spotify" "阮")
+	(button :class "app-spotify" 
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --twitter" "")
 	)
 )
 
