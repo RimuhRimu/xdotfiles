@@ -4,7 +4,7 @@ if status is-interactive
     neofetch
 end
 
-load_nvm >/dev/null
+# load_nvm >/dev/null
 
 # Generated for envman. Do not edit.
 test -s "$HOME/.config/envman/load.fish"; and source "$HOME/.config/envman/load.fish"
