@@ -178,6 +178,13 @@ notification:
     ### object empty (technical reasons, i.e. I am lazy).
     # script: "linux-notification-center-parse-chromium"
   - match:
+      app-name: "Firefox"
+    modify:
+      image-size: 80
+      timeout: 6000
+      send-noti-closed: true
+      class-name: "Firefox"
+  - match:
       app-name: "Spotify"
     modify:
       image-size: 80

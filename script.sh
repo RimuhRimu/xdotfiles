@@ -70,9 +70,17 @@ install_full_environment() {
 
 	betterlockscreen -u ~/wallpapers/wall.jpg
 
+	# Backup the existing ~/.config/ directory
 	mv ~/.config/ ~/.config.backup/
-	cp -r ./config/* ~/.config/
-	cp -r ./bin ~/.local/bin
+
+	# Create symbolic links to the config files
+	for file in ~/path/to/config/*; do
+		ln -s $file ~/.config/
+	done
+
+	# Create a symbolic link to the bin directory
+	ln -s ~/path/to/bin ~/.local/bin
+
 	echo "Installing nvim configs"
 	git clone https://github.com/rimuhrimu/mylazyconfig ~/.config/nvim
 
