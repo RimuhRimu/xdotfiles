@@ -108,7 +108,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       ((modm .|. shiftMask, xK_f), sendMessage ToggleLayout), -- full size
       ((modm, xK_p), spawn "setxkbmap latam"),
       ((modm .|. shiftMask, xK_p), spawn "setxkbmap us"),
-      ((modm, xK_b), spawn "exec ~/bin/bartoggle"),
+      ((modm .|. shiftMask, xK_d), spawn "flameshot gui"),
       ((modm, xK_z), spawn "exec ~/bin/inhibit_activate"),
       ((modm .|. shiftMask, xK_z), spawn "exec ~/bin/inhibit_deactivate"),
       -- Turn do not disturb on and off
@@ -163,9 +163,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
       -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
       -- Quit xmonad
-      ((modm .|. shiftMask, xK_q), spawn "~/bin/powermenu.sh"),
+      ((modm .|. shiftMask, xK_q), spawn "~/bin/powermenu.sh")
       -- Restart xmonad
-      ((modm, xK_q), spawn "~/bin/restart")
+      -- ((modm, xK_q), spawn "~/bin/restart")
     ]
       ++
       --
@@ -265,10 +265,9 @@ addEWMHFullscreen = do
 --
 -- By default, do nothing.
 myStartupHook = do
-  spawnOnce "feh --bg-scale ~/wallpapers/wall.jpg"
+  spawnOnce "feh --bg-scale ~/wallpapers/alley.png"
   spawnOnce "eww daemon"
   spawnOnce "eww -c ~/.config/eww/bar open bar"
-  spawnOnce "dropbox -i daemon"
   spawnOnce "redshift"
   spawn "xsetroot -cursor_name left_ptr"
   spawn "exec ~/bin/lock.sh"

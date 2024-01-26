@@ -1,0 +1,12 @@
+#!/bin/sh
+INTERFACE=wlp3s0
+
+awk '{
+  if (rx) {
+    printf ("  %.0f", ($2-rx)/1024)
+  } else {
+    rx=$2; tx=$10;
+  }
+}' \
+    <(grep $INTERFACE /proc/net/dev) \
+    <(sleep 1; grep $INTERFACE /proc/net/dev)

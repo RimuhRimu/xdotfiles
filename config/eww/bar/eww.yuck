@@ -18,8 +18,6 @@
 
 ;; Network usage ;;
 
-;;(defpoll netusage :interval "1s" "scripts/netusage");;
-
 ;; Workspaces Widgets ;;
 (defwidget workspaces []
 	(literal :content workspace))

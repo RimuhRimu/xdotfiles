@@ -15,7 +15,7 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 set -x FLYCTL_INSTALL $HOME/.fly
 
-set -x PATH $HOME/scripts/unix $HOME/.cargo/bin $HOME/.cabal/bin $HOME/.ghcup/bin $PATH $FLYCTL_INSTALL/bin
+set -x PATH $HOME/scripts/unix $HOME/.cargo/bin $HOME/.cabal/bin $HOME/.ghcup/bin $PATH $FLYCTL_INSTALL/bin $HOME/.local/flutter/bin
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME
 # =============================================================================
